@@ -37,22 +37,40 @@ a:hover {
 }
 
 
-/* Flex Container */
+/* **Flex Container ************************************************/
 .flex-nav ul {
   border:1px solid black;
   list-style: none;
   margin: 0;
   padding: 0;
-  
+  display: flex;  /*Habilitamos flex para todos sus hijos directos*/
 }
 
+.flex-nav li{
+  flex: 3;        /*shorthand: flex-grow, flex-shrink y flex-basis */
+}
+
+.flex-nav .social{
+  flex: 1;
+}
 
 @media all and (max-width:1000px) {
-  
+  .flex-nav ul{
+    flex-wrap: wrap;    /*los elementos flexibles se envolveran en varias lineas de arriba a abajo*/
+  }
 
+  .flex-nav li{
+    flex: 1 1 50%;
+  }
+
+  .flex-nav .social{
+    flex: 1 1 25%;
+  }
 }
 
 @media all and (max-width:500px) {
-  
+  .flex-nav li{
+    flex-basis: 100%;
+  }
 
 }
